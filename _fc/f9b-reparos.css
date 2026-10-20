@@ -1,0 +1,59 @@
+/* Reparo F9B no export existente. Seletores restritos à rota corrente. */
+html[data-dalva-page="patrocinio-detalhe"] .framer-41oLJ .framer-1ejpbga,
+html[data-dalva-page="temporadas"] .framer-41oLJ .framer-1ejpbga,
+html[data-dalva-page="impacto"] .framer-41oLJ .framer-1ejpbga {
+  height: clamp(300px, 56.25vw, 900px) !important;
+  flex-direction: row !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  pointer-events: none;
+}
+html[data-dalva-page="patrocinio-detalhe"] .framer-41oLJ .framer-xuj25r,
+html[data-dalva-page="temporadas"] .framer-41oLJ .framer-xuj25r,
+html[data-dalva-page="impacto"] .framer-41oLJ .framer-xuj25r {
+  flex: 1 0 0 !important;
+  width: auto !important;
+}
+/* Esta capa é um vídeo decorativo sem imagem de espera. Preservamos o
+   componente e a fonte no export, retirando da rota apenas o espaço vazio. */
+html[data-dalva-page="modalidades"] .framer-mxEOV .framer-1668ffo-container,
+html[data-dalva-page="modalidades"] .framer-mxEOV .framer-9u1zd2 {
+  display: none !important;
+}
+html[data-dalva-page="modalidades"] .framer-mxEOV .framer-9u7kxa {
+  overflow: visible !important;
+  min-width: 0;
+}
+html[data-dalva-page="modalidades"] .framer-mxEOV .framer-hjbtve,
+html[data-dalva-page="modalidades"] .framer-mxEOV .framer-1ea17e {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+html[data-dalva-page="modalidades"] .framer-mxEOV .framer-1ea17e h1 {
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  width: auto !important;
+  max-width: 100%;
+}
+/* O export usa display:contents no fundo do template. O canvas recebe
+   a mesma cor escura para que texto branco continue legível. */
+html[data-dalva-page="home"] body,
+html[data-dalva-page="modalidades"] body {
+  background-color: #141517;
+}
+html[data-dalva-page="home"] .framer-U77oc .framer-4sl06a {
+  background-color: rgba(0, 0, 0, 0.68);
+}
+html[data-dalva-page="home"] .framer-U77oc .framer-18zrs4q .char {
+  opacity: 1 !important;
+}
+
+/* A imagem do Framer é um filho absoluto, acima do fundo da seção.
+   O véu precisa ficar sobre essa imagem e sob o conteúdo existente. */
+html[data-dalva-page="home"] .framer-U77oc .framer-4sl06a > [data-framer-background-image-wrapper]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.68);
+  pointer-events: none;
+}
